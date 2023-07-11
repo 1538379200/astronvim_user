@@ -32,7 +32,7 @@ git clone https://github.com/<your_user>/<your_repository> ~/.config/nvim/lua/us
 #### windows使用
 
 ```powershell
-git clone https://github.com/1538379200/astronvim_user.git $env:LOCALAPPDATA\nvim
+git clone https://github.com/1538379200/astronvim_user.git $env:LOCALAPPDATA\nvim\lua\user
 ```
 
 #### Start Neovim
