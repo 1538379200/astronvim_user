@@ -17,6 +17,12 @@ mv ~/.local/share/nvim ~/.local/share/nvim.bak
 git clone https://github.com/AstroNvim/AstroNvim ~/.config/nvim
 ```
 
+#### windows克隆
+
+```powershell
+git clone https://github.com/AstroNvim/AstroNvim.git $env:LOCALAPPDATA\nvim
+```
+
 #### Create a new user repository from this template
 
 Press the "Use this template" button above to create a new repository to store your user configuration.
