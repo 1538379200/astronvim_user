@@ -1,0 +1,43 @@
+2023-07-13 13:55:06 - Neovide panicked with the message 'index out of bounds: the len is 1 but the index is 1'. (File: src\bridge\events.rs; Line: 321, Column: 17)
+   0: <unknown>
+   1: <unknown>
+   2: <unknown>
+   3: <unknown>
+   4: <unknown>
+   5: <unknown>
+   6: <unknown>
+   7: <unknown>
+   8: <unknown>
+   9: <unknown>
+  10: <unknown>
+  11: <unknown>
+  12: <unknown>
+  13: <unknown>
+  14: <unknown>
+  15: <unknown>
+  16: <unknown>
+  17: <unknown>
+  18: <unknown>
+  19: BaseThreadInitThunk
+  20: RtlUserThreadStart
+
+2023-07-13 13:55:22 - Neovide panicked with the message 'Focus Lost Failed: SendError(WriterError(Os { code: 232, kind: BrokenPipe, message: "管道正在被关闭。" }), "nvim_command")'. (File: src\bridge\ui_commands.rs; Line: 143, Column: 18)
+   0: <unknown>
+   1: <unknown>
+   2: <unknown>
+   3: <unknown>
+   4: <unknown>
+   5: <unknown>
+   6: <unknown>
+   7: <unknown>
+   8: <unknown>
+   9: <unknown>
+  10: <unknown>
+  11: <unknown>
+  12: <unknown>
+  13: <unknown>
+  14: <unknown>
+  15: <unknown>
+  16: BaseThreadInitThunk
+  17: RtlUserThreadStart
+
