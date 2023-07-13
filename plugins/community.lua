@@ -4,7 +4,9 @@ return {
   -- example of imporing a plugin, comment out to use it or add your own
   -- available plugins can be found at https://github.com/AstroNvim/astrocommunity
 
-  { import = "astrocommunity.motion.flash-nvim" }
+  { import = "astrocommunity.motion.flash-nvim" },
+  { import = "astrocommunity.scrolling.neoscroll-nvim" },
+  { import = "astrocommunity.test.neotest" }
 
   -- { import = "astrocommunity.colorscheme.catppuccin" },
   -- { import = "astrocommunity.completion.copilot-lua-cmp" },
