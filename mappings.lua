@@ -11,15 +11,34 @@ return {
     ["<leader>bn"] = { "<cmd>tabnew<cr>", desc = "New tab" },
     ["<leader>bD"] = {
       function()
-        require("astronvim.utils.status").heirline.buffer_picker(function(bufnr) require("astronvim.utils.buffer").close(bufnr) end)
+        require("astronvim.utils.status").heirline.buffer_picker(function(bufnr)
+          require("astronvim.utils.buffer").close(
+            bufnr)
+        end)
       end,
       desc = "Pick to close",
     },
     ["<A-l>"] =
-      { function() require("astronvim.utils.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end, desc = "Next buffer" },
+    { function() require("astronvim.utils.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end, desc = "Next buffer" },
     ["<A-h>"] = {
       function() require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
       desc = "Previous buffer",
+    },
+    -- todo-comments 相关设置
+    ["<leader>fT"] = { "<cmd>TodoTelescope<cr>", desc = "搜索TODO" },
+    ["<leader>Tl"] = { "<cmd>TodoLocList<cr>", desc = "TODO列表" },
+    ["<leader>Tq"] = { "<cmd>TodoQuickFix<cr>", desc = "TODO快速修复" },
+    ["]t"] = {
+      function()
+        require("todo-comments").jump_next()
+      end,
+      desc = "跳到下一个TODO"
+    },
+    ["[t"] = {
+      function()
+        require("todo-comments").jump_prev()
+      end,
+      desc = "跳到上一个TODO"
     },
     -- tables with the `name` key will be registered with which-key if it's installed
     -- this is useful for naming menus
@@ -33,7 +52,7 @@ return {
   },
   i = {
     ["<C-h>"] = { "<Left>" },
-    ["<C-l>"] = { "<Right>"},
+    ["<C-l>"] = { "<Right>" },
     ["<C-v>"] = { "<C-r>+" },
     ["<C-z>"] = { "<cmd>undo<cr>" }
   },
@@ -41,4 +60,3 @@ return {
     ["<C-c>"] = { y },
   }
 }
-
