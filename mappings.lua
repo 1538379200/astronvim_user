@@ -54,7 +54,9 @@ return {
     ["<C-h>"] = { "<Left>" },
     ["<C-l>"] = { "<Right>" },
     ["<C-v>"] = { "<C-r>+" },
-    ["<C-z>"] = { "<cmd>undo<cr>" }
+    ["<C-z>"] = { "<cmd>undo<cr>" },
+    ["<C-S-l>"] = { "<cmd>norm $<cr>" },
+    ["<C-S-h>"] = { "<cmd>norm ^<cr>" }
   },
   v = {
     ["<C-c>"] = { y },
