@@ -45,6 +45,7 @@ return {
     ["<leader>b"] = { name = "Buffers" },
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
+    ["<S-Enter>"] = { "o<Esc>", desc = "在下方创建空行" },
   },
   t = {
     -- setting a mapping to false will disable it
