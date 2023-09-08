@@ -46,6 +46,8 @@ return {
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
     ["<S-Enter>"] = { "o<Esc>", desc = "在下方创建空行" },
+    ["<C-\\>"] = { "<cmd>ToggleTerm<cr>", desc = "Toggle terminal" },
+    ["<C-F12>"] = { function() require("aerial").toggle() end, desc = "Symbols outline" },
   },
   t = {
     -- setting a mapping to false will disable it
@@ -57,7 +59,8 @@ return {
     ["<C-v>"] = { "<C-r>+" },
     ["<C-z>"] = { "<cmd>undo<cr>" },
     ["<C-S-l>"] = { "<cmd>norm $<cr>" },
-    ["<C-S-h>"] = { "<cmd>norm ^<cr>" }
+    ["<C-S-h>"] = { "<cmd>norm ^<cr>" },
+    ["<C-s>"] = { "<cmd>w!<cr>", desc="Force write"},
   },
   v = {
     ["<C-c>"] = { y },
