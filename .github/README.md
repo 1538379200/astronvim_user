@@ -46,3 +46,18 @@ git clone https://github.com/1538379200/astronvim_user.git $env:LOCALAPPDATA\nvi
 ```shell
 nvim
 ```
+
+## 修改快捷键
+
+`astronvim` 默认映射：https://astronvim.com/Basic%20Usage/mappings
+
+
+- `Alt + j/k`：函数间上下跳转
+- `Alt + h/l`：跳转左右标签（buffer）
+- `Ctrl + j/k/h/l`：插入模式下光标移动
+- `<leader>Tl`：TODO列表
+- `<leader>Tq`：TODO快速修复
+- `Ctrl+Shift+F10`：运行代码
+- `Ctrl+\`：同 F7 相同的 terminal 窗口
+- `Ctrl+F12`：outline，展示页面中所有函数变量等
+- `Ctrl+Shift+h/l`：输入模式下跳转行头行尾
