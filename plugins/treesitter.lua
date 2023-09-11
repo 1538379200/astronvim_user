@@ -7,6 +7,10 @@ return {
       "lua", "python", "go", "rust", "markdown", "yaml", "toml"
     })
     return require("astronvim.utils").extend_tbl(opts, {
+      highlight = {
+        enable = true,
+        disable = false,
+      },
       textobjects = {
         move = {
           goto_next_start = {

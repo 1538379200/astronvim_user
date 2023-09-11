@@ -58,9 +58,9 @@ return {
     ["<C-l>"] = { "<Right>" },
     ["<C-v>"] = { "<C-r>+" },
     ["<C-z>"] = { "<cmd>undo<cr>" },
-    ["<C-S-l>"] = { "<cmd>norm $<cr>" },
-    ["<C-S-h>"] = { "<cmd>norm ^<cr>" },
-    ["<C-s>"] = { "<cmd>w!<cr>", desc="Force write"},
+    ["<C-S-l>"] = { "<cmd>norm $<cr>a" },
+    ["<C-S-h>"] = { "<cmd>norm ^<cr>i" },
+    ["<C-s>"] = { "<cmd>w!<cr>", desc = "Force write" },
   },
   v = {
     ["<C-c>"] = { y },

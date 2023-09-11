@@ -10,6 +10,9 @@ return {
   { import = "astrocommunity.editing-support.comment-box-nvim" },
   { import = "astrocommunity.editing-support.neogen" },
   { import = "astrocommunity.editing-support.todo-comments-nvim" },
+  { import = "astrocommunity.syntax.hlargs-nvim" },
+  { import = "astrocommunity.markdown-and-latex.markdown-preview-nvim" },
+  { import = "astrocommunity.colorscheme.onedarkpro-nvim" },
   -- { import = "astrocommunity.editing-support.auto-save-nvim" }
 
   -- { import = "astrocommunity.colorscheme.catppuccin" },
