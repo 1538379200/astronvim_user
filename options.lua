@@ -27,7 +27,8 @@ return {
     neovide_cursor_trail_size = 0.4
   },
   o = {
-    guifont = "FiraCode NFM:h10"
+    -- guifont = "FiraCode NFM:h10"
+    guifont = "Monaco:h9"
   },
 }
 -- If you need more control, you can use the function()...end notation

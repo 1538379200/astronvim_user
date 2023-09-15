@@ -58,7 +58,7 @@ nvim
 - `<leader>Tl`：TODO列表
 - `<leader>Tq`：TODO快速修复
 - `Ctrl+Shift+F10`：运行代码/预览markdown等
-- `Ctrl+\`：同 F7 相同的 terminal 窗口
-- `Ctrl+F12`：outline，展示页面中所有函数变量等
+- `Ctrl+\`：同 F7 相同的 terminal 窗口，使用 `Ctrl+\` 然后使用 `Ctrl+n` 可回到normal模式，normal模式下可以使用 `Ctrl+\` 或 `Ctrl+j/k` 或 `F7` 切换到编辑器中
+- `Ctrl+F12`：侧边栏展示页面中所有函数变量等
 - `Ctrl+Shift+h/l`：输入模式下跳转行头行尾
 - `<leader>a`：选择生成不同的注释结构
