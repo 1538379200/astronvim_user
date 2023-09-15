@@ -51,14 +51,17 @@ nvim
 
 `astronvim` 默认映射：https://astronvim.com/Basic%20Usage/mappings
 
-
-- `Alt + j/k`：函数间上下跳转
-- `Alt + h/l`：跳转左右标签（buffer）
-- `Ctrl + j/k/h/l`：插入模式下光标移动
-- `<leader>Tl`：TODO列表
-- `<leader>Tq`：TODO快速修复
-- `Ctrl+Shift+F10`：运行代码/预览markdown等
-- `Ctrl+\`：同 F7 相同的 terminal 窗口，使用 `Ctrl+\` 然后使用 `Ctrl+n` 可回到normal模式，normal模式下可以使用 `Ctrl+\` 或 `Ctrl+j/k` 或 `F7` 切换到编辑器中
-- `Ctrl+F12`：侧边栏展示页面中所有函数变量等
-- `Ctrl+Shift+h/l`：输入模式下跳转行头行尾
-- `<leader>a`：选择生成不同的注释结构
+- `Alt + j/k`：函数间上下跳转 -- *normal*
+- `Alt + h/l`：跳转左右标签（buffer）-- *normal*
+- `Ctrl + j/k/h/l`：插入模式下光标移动 -- *insert*
+- `<leader>Tl`：TODO列表 -- *normal*
+- `<leader>Tq`：TODO快速修复 -- *normal*
+- `Ctrl+Shift+F10`：运行代码/预览markdown等 -- *normal*
+- `Ctrl+\`：同 F7 相同的 terminal 窗口，使用 `Ctrl+\` 然后使用 `Ctrl+n` 可回到normal模式，normal模式下可以使用 `Ctrl+\` 或 `Ctrl+j/k` 或 `F7` 切换到编辑器中 --*normal*
+- `Ctrl+F12`：侧边栏展示页面中所有函数变量等 -- *normal*
+- `Ctrl+Shift+h/l`：输入模式下跳转行头行尾 -- *insert*
+- `<leader>a`：选择生成不同的注释结构（可以使用 `luasnip` 的跳转功能）-- *normal*
+- `Ctrl+Enter`：`luasnip` 的向下跳转 -- *insert*
+- `Ctrl+Shift+Enter`：`luasnip` 向上跳转 -- *insert*
+- `Shift+Enter` ：普通模式下增加一行 -- *normal*
+- `Ctrl+s`：插入和普通模式强制保存 -- *normal, insert*
