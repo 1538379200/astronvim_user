@@ -65,3 +65,6 @@ nvim
 - `Ctrl+Shift+Enter`：`luasnip` 向上跳转 -- *insert*
 - `Shift+Enter` ：普通模式下增加一行 -- *normal*
 - `Ctrl+s`：插入和普通模式强制保存 -- *normal, insert*
+- `]e`：跳转到下一个错误，`[e` 跳转上一个错误
+- `F12`：lspsaga的outline，悬浮窗口形式
+- `]t/[t`：上一个和下一个 todo 标记

@@ -28,7 +28,9 @@ return {
   },
   o = {
     -- guifont = "FiraCode NFM:h10"
-    guifont = "Monaco:h9"
+    -- guifont = "Monaco:h9"
+    -- guifont = "GoMono NFM:h10"
+    guifont = "JetBrainsMono Nerd Font Mono:h10"
   },
 }
 -- If you need more control, you can use the function()...end notation
