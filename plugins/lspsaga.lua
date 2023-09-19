@@ -35,6 +35,19 @@ return {
                     toggle_or_jump = 'o',
                     quit = 'q',
                 }
+            },
+            callhierarchy = {
+                keys = {
+                    edit = '<Enter>',
+                    vsplit = '|',
+                    split = '\\',
+                    tabe = 't',
+                    quit = 'q',
+                    -- shuttle = '[w',
+                    shuttle = '<C-l>',
+                    toggle_or_req = 'u',
+                    close = '<C-c>k',
+                }
             }
         })
     end,
@@ -60,6 +73,18 @@ return {
             mode = { "n" },
             "<cmd>Lspsaga outline<cr>",
             desc = "lspsaga outline"
+        },
+        {
+            "<leader>I",
+            mode={ "n" },
+            "<cmd>Lspsaga incoming_calls<cr>",
+            desc="lspsaga incoming_calls"
+        },
+        {
+            "<leader>O",
+            mode={ "n" },
+            "<cmd>Lspsaga outgoing_calls<cr>",
+            desc="lspsaga outgoing_calls"
         }
 
     }

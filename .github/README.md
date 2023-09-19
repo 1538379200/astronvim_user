@@ -67,4 +67,15 @@ nvim
 - `Ctrl+s`：插入和普通模式强制保存 -- *normal, insert*
 - `]e`：跳转到下一个错误，`[e` 跳转上一个错误
 - `F12`：lspsaga的outline，悬浮窗口形式
+	- `<Enter>`：跳转
+	- `q`：关闭
 - `]t/[t`：上一个和下一个 todo 标记
+- `<leader>I`：`lspsaga` 的 `incoming_calls` ，查看谁调用了此方法函数
+- `<leader>O`：`lspsaga` 的 `outgoing_calls` ，查看此函数使用了那些方法
+	- `<Enter>`：打开文件，跳转
+	- `|`：垂直分屏
+	- `\`：水平分屏
+	- `t`：tab形式打开
+	- `q`：退出
+	- `<C-c>k`：关闭
+	- `<C-l>`：在窗口间切换
