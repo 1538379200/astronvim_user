@@ -48,6 +48,7 @@ return {
     ["<S-Enter>"] = { "o<Esc>", desc = "在下方创建空行" },
     ["<C-\\>"] = { "<cmd>ToggleTerm<cr>", desc = "Toggle terminal" },
     ["<C-F12>"] = { function() require("aerial").toggle() end, desc = "Symbols outline" },
+    -- ["K"] = { "<cmd>Lspsaga hover_doc<cr>", desc="Lspsaga hover_doc"},
   },
   t = {
     -- setting a mapping to false will disable it

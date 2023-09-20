@@ -85,6 +85,12 @@ return {
             mode={ "n" },
             "<cmd>Lspsaga outgoing_calls<cr>",
             desc="lspsaga outgoing_calls"
+        },
+        {
+            "K",
+            mode={ "n" },
+            "<cmd>Lspsaga hover_doc<cr>",
+            desc="lspsaga hover_doc"
         }
 
     }
