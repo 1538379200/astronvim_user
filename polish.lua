@@ -1,3 +1,15 @@
+function match_pycmd()
+    local state = require("neo-tree.sources.manager").get_state("filesystem")
+    local project_path = state.path
+    local terminals = require("toggleterm.terminal").get_all(true)
+    local pycmd = "py %"
+    if (terminals == nil) or (#terminals == 0) then
+        pycmd = string.format("set PYTHONPATH=%s && py %%", project_path)
+    end
+    local cmd = string.format("<cmd>TermExec direction=float cmd=\"%s\"<cr>", pycmd)
+    return cmd
+end
+
 return {
     vim.api.nvim_create_autocmd("BufEnter", {
         desc = "QuickRunner",
@@ -10,7 +22,7 @@ return {
                     0,
                     "n",
                     "<C-S-F10>",
-                    "<cmd>TermExec direction=float cmd=\"py %\"<cr>",
+                    match_pycmd(),
                     { silent = true, noremap = true }
                 )
             elseif filetype == "markdown" then
