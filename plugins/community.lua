@@ -13,7 +13,10 @@ return {
   { import = "astrocommunity.syntax.hlargs-nvim" },
   { import = "astrocommunity.markdown-and-latex.markdown-preview-nvim" },
   { import = "astrocommunity.colorscheme.onedarkpro-nvim" },
-  -- { import = "astrocommunity.utility.noice-nvim" },
+  { import = "astrocommunity.editing-support.zen-mode-nvim" },
+  { import = "astrocommunity.motion.nvim-surround" },
+  { import = "astrocommunity.motion.vim-matchup" },
+  { import = "astrocommunity.editing-support.vim-move" },
 
 
   -- { import = "astrocommunity.editing-support.auto-save-nvim" }

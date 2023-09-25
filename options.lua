@@ -24,7 +24,11 @@ return {
     ui_notifications_enabled = true, -- disable notifications when toggling UI elements
     resession_enabled = false,       -- enable experimental resession.nvim session management (will be default in AstroNvim v4)
     -- neovide_cursor_animation_length = 0
-    neovide_cursor_trail_size = 0.4
+    neovide_cursor_trail_size = 0.4,
+    neovide_hide_mouse_when_typing = true,
+    -- 自定义 vim-move 插件的功能键
+    move_key_modifier = "S",
+    move_key_modifier_visualmode = "S"
   },
   o = {
     -- guifont = "FiraCode NFM:h10"
