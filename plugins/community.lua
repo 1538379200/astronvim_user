@@ -17,6 +17,8 @@ return {
   { import = "astrocommunity.motion.nvim-surround" },
   { import = "astrocommunity.motion.vim-matchup" },
   { import = "astrocommunity.editing-support.vim-move" },
+  { import = "astrocommunity.utility.telescope-live-grep-args-nvim" },
+  { import = "astrocommunity.programming-language-support.nvim-jqx" },
 
 
   -- { import = "astrocommunity.editing-support.auto-save-nvim" }

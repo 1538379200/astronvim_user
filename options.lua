@@ -11,7 +11,8 @@ return {
     shiftwidth = 4,
     clipboard = 'unnamedplus',
     linespace = 6,
-    ignorecase = true
+    ignorecase = true,
+    autoindent = true,
   },
   g = {
     mapleader = " ",                 -- sets vim.g.mapleader
