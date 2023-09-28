@@ -65,18 +65,26 @@ nvim
 - `Ctrl+Shift+Enter`：`luasnip` 向上跳转 -- *insert*
 - `Shift+Enter` ：普通模式下增加一行 -- *normal*
 - `Ctrl+s`：插入和普通模式强制保存 -- *normal, insert*
-- `]e`：跳转到下一个错误，`[e` 跳转上一个错误
-- `F12`：lspsaga的outline，悬浮窗口形式
-	- `<Enter>`：跳转
-	- `q`：关闭
-- `]t/[t`：上一个和下一个 todo 标记
-- `<leader>I`：`lspsaga` 的 `incoming_calls` ，查看谁调用了此方法函数
-- `<leader>O`：`lspsaga` 的 `outgoing_calls` ，查看此函数使用了那些方法
-	- `<Enter>`：打开文件，跳转
-	- `|`：垂直分屏
-	- `\`：水平分屏
-	- `t`：tab形式打开
-	- `q`：退出
-	- `<C-c>k`：关闭
-	- `<C-l>`：在窗口间切换
-- `K` 显示文档，再点击一次 `K` 进入弹窗，移动到链接，使用 `gx` 前往链接地址
+- `]e`：跳转到下一个错误，`[e` 跳转上一个错误 -- *normal*
+- `F12`：lspsaga的outline，悬浮窗口形式 -- *normal*
+  - `<Enter>`：跳转
+  - `q`：关闭
+- `]t/[t`：上一个和下一个 todo 标记 -- *normal*
+- `<leader>I`：`lspsaga` 的 `incoming_calls` ，查看谁调用了此方法函数 -- *normal*
+- `<leader>O`：`lspsaga` 的 `outgoing_calls` ，查看此函数使用了那些方法 -- *normal*
+  - `<Enter>`：打开文件，跳转
+  - `|`：垂直分屏
+  - `\`：水平分屏
+  - `t`：tab形式打开
+  - `q`：退出
+  - `<C-c>k`：关闭
+  - `<C-l>`：在窗口间切换
+- `K` 显示文档，再点击一次 `K` 进入弹窗，移动到链接，使用 `gx` 前往链接地址 -- *normal*
+- `<leader>fg` ：使用 `telescope` 增加参数过滤  --*normal*：
+  - `"test" testcases` ：搜索 `testcases` 目录下的 `test` 字符
+  
+  - `"test" --iglob **/test_child/**` ：搜索所有 `test_child` 目录下文件中的 `test` 字符
+  
+  - `"test" -g "*.py"` ：过滤文件格式
+  
+  - 依赖于 `ripgrep` 的过滤，可以参考[ripgrep/GUIDE.md at master · BurntSushi/ripgrep (github.com)](https://github.com/BurntSushi/ripgrep/blob/master/GUIDE.md)

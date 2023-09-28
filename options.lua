@@ -28,7 +28,7 @@ return {
     neovide_cursor_trail_size = 0.4,
     neovide_hide_mouse_when_typing = true,
     -- 自定义 vim-move 插件的功能键
-    move_key_modifier = "S",
+    move_key_modifier = "",
     move_key_modifier_visualmode = "S"
   },
   o = {
