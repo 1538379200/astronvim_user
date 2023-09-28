@@ -50,6 +50,7 @@ return {
     ["<C-F12>"] = { function() require("aerial").toggle() end, desc = "Symbols outline" },
     ["<leader>fg"] = { function() require("telescope").extensions.live_grep_args.live_grep_args() end, desc =
     "telescope live grep args" },
+    ["<leader>ZM"] = { "<cmd>ZenMode<cr>", desc = "Zen Mode" },
     -- ["K"] = { "<cmd>Lspsaga hover_doc<cr>", desc="Lspsaga hover_doc"},
   },
   t = {
