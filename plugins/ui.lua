@@ -48,4 +48,19 @@ return {
             },
         },
     },
+    {
+        "folke/zen-mode.nvim",
+        opts = function(_, opts)
+            return require("astronvim.utils").extend_tbl(opts, {
+                plugins = {
+                    options = {
+                        relativenumber = true,
+                    },
+                --     on_open = function(win)
+                --         require("indent_blankline").init()
+                --     end,
+                }
+            })
+        end
+    },
 }
