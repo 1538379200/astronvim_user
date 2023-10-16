@@ -6,21 +6,23 @@ return {
       -- "lua"
       "lua", "python", "go", "rust", "markdown", "yaml", "toml"
     })
+    local object
+    object = {
+      move = {
+        goto_next_start = {
+          ["<A-j>"] = { query = "@function.outer", desc = "Next function start" },
+        },
+        goto_previous_start = {
+          ["<A-k>"] = { query = "@function.outer", desc = "Previous function start" },
+        },
+      },
+    }
     return require("astronvim.utils").extend_tbl(opts, {
       highlight = {
         enable = true,
         disable = false,
       },
-      textobjects = {
-        move = {
-          goto_next_start = {
-            ["<A-j>"] = { query = "@function.outer", desc = "Next function start" },
-          },
-          goto_previous_start = {
-            ["<A-k>"] = { query = "@function.outer", desc = "Previous function start" },
-          },
-        },
-      },
+      textobjects = object,
       incremental_selection = {
         enable = true,
         keymaps = {

@@ -56,9 +56,9 @@ return {
                     options = {
                         relativenumber = true,
                     },
-                --     on_open = function(win)
-                --         require("indent_blankline").init()
-                --     end,
+                    --     on_open = function(win)
+                    --         require("indent_blankline").init()
+                    --     end,
                 }
             })
         end

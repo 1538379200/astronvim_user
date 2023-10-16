@@ -20,7 +20,9 @@ return {
   -- Set colorscheme to use
   -- colorscheme = "astrodark",
   -- colorscheme = "catppuccin-frappe",
-  colorscheme = "onedark_vivid",
+  -- colorscheme = "onedark_vivid",
+  colorscheme = "github_dark",
+  -- colorscheme = "rose-pine",
 
   -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
   diagnostics = {

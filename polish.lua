@@ -33,6 +33,14 @@ return {
                     "<cmd>MarkdownPreviewToggle<cr>",
                     { silent = true, noremap = true }
                 )
+            elseif filetype == "go" then
+                vim.api.nvim_buf_set_keymap(
+                    0,
+                    "n",
+                    "<C-S-F10>",
+                    "<cmd>go run .<cr>",
+                    { silent = true, noremap = true }
+                )
             end
         end
     })

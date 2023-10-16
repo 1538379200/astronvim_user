@@ -21,7 +21,8 @@ return {
   { import = "astrocommunity.programming-language-support.nvim-jqx" },
   -- { import = "astrocommunity.color.twilight-nvim"},
   { import = "astrocommunity.motion.marks-nvim"},
-
+  { import = "astrocommunity.colorscheme.github-nvim-theme"},
+  { import = "astrocommunity.colorscheme.rose-pine"},
 
   -- { import = "astrocommunity.editing-support.auto-save-nvim" }
   -- { import = "astrocommunity.colorscheme.catppuccin" },
