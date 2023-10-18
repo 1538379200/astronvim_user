@@ -35,6 +35,10 @@ return {
     -- guifont = "FiraCode NFM:h10"
     -- guifont = "Monaco:h9"
     guifont = "GoMono NFM:h10"
+
+    -- Iosevka: https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Iosevka/Medium
+    -- guifont = "Iosevka Nerd Font Mono:h10"
+    
     -- guifont = "JetBrainsMono Nerd Font Mono:h10"
   },
 }

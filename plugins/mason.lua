@@ -7,7 +7,8 @@ return {
     opts = function(_, opts)
       -- add more things to the ensure_installed table protecting against community packs modifying it
       opts.ensure_installed = require("astronvim.utils").list_insert_unique(opts.ensure_installed, {
-        "lua_ls", "pyright", "bashls", "gopls", "jsonls", "marksman", "rust_analyzer", "sqlls", "taplo", "yamlls", "powershell_es"
+        "lua_ls", "pyright", "bashls", "gopls", "jsonls", "marksman", "rust_analyzer", "sqlls", "taplo", "yamlls",
+        "powershell_es"
       })
     end,
   },
@@ -33,4 +34,12 @@ return {
       })
     end,
   },
+  {
+    "mfussenegger/nvim-dap",
+    opts = function(_, opts)
+      require("astronvim.utils").extend_tbl(opts, {
+        enabled = true
+      })
+    end
+  }
 }

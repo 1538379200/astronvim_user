@@ -23,6 +23,8 @@ return {
   { import = "astrocommunity.motion.marks-nvim"},
   { import = "astrocommunity.colorscheme.github-nvim-theme"},
   { import = "astrocommunity.colorscheme.rose-pine"},
+  { import = "astrocommunity.test.neotest"},
+  { import = "astrocommunity.code-runner.overseer-nvim"},
 
   -- { import = "astrocommunity.editing-support.auto-save-nvim" }
   -- { import = "astrocommunity.colorscheme.catppuccin" },

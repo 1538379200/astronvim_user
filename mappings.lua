@@ -52,6 +52,8 @@ return {
     "telescope live grep args" },
     ["<leader>ZM"] = { "<cmd>ZenMode<cr>", desc = "Zen Mode" },
     -- ["K"] = { "<cmd>Lspsaga hover_doc<cr>", desc="Lspsaga hover_doc"},
+    -- Overseer 的相关快捷方式
+    ["<F10>"] = { "<cmd>OverseerToggle right<cr>", desc = "Overseer Toggle" },
   },
   t = {
     -- setting a mapping to false will disable it
