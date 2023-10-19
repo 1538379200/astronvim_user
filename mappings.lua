@@ -54,6 +54,14 @@ return {
     -- ["K"] = { "<cmd>Lspsaga hover_doc<cr>", desc="Lspsaga hover_doc"},
     -- Overseer 的相关快捷方式
     ["<F10>"] = { "<cmd>OverseerToggle right<cr>", desc = "Overseer Toggle" },
+
+    -- 使用黑洞寄存器使删除不进行数据剪切
+    -- ["d"] = { "\"_d", desc="删除而不剪切"},
+    ["x"] = {"\"_x", desc="删除单个字符不剪切"},
+    ["dd"] = { "\"_dd", desc="删除一行不剪切"},
+    ["d"] = { "\"_d", desc="删除不剪切"},
+    ["D"] = {"\"_D", desc="删除不剪切"},
+    ["X"] = { "\"_X", desc="删除不剪切"},
   },
   t = {
     -- setting a mapping to false will disable it
@@ -64,13 +72,15 @@ return {
     ["<C-l>"] = { "<Right>" },
     ["<C-v>"] = { "<C-r>+" },
     ["<C-z>"] = { "<cmd>undo<cr>" },
-    ["<C-S-l>"] = { "<Esc>A" },
-    ["<C-S-h>"] = { "<Esc>^i" },
+    ["<C-S-l>"] = { "<C-o>$" },
+    ["<C-S-h>"] = { "<C-o>^" },
     ["<C-s>"] = { "<cmd>w!<cr>", desc = "Force write" },
     ["<C-Enter>"] = { function() require("luasnip").jump(1) end, desc = "luasnip向下跳转" },
     ["<C-S-Enter>"] = { function() require("luasnip").jump(-1) end, desc = "luasnip向上跳转" }
   },
   v = {
     ["<C-c>"] = { "y" },
+    ["d"] = { "\"_d", desc="删除而不剪切"},
+    ["x"] = { "\"_x", desc="删除不剪切"},
   },
 }

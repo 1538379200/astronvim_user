@@ -75,6 +75,8 @@ nvim
   - `q`：关闭
 
 - `Ctrl+Shift+h/l`：输入模式下跳转行头行尾 -- *insert*
+  
+  - 如果此方式不生效，你可以使用原始方式，在插入模式时，使用 `ctrl+o` ，之后即可在插入模式时使用普通模式命令，例如，跳转行尾：`Ctrl+o+$` 或者 `Ctrl+o+A` ，跳转行首：`Ctrl+o^` ，当然，跳转行尾直接使用 `esc` 后 `A` 可能更快
 
 - `<leader>a`：选择生成不同的注释结构（可以使用 `luasnip` 的跳转功能）-- *normal*
   
@@ -121,3 +123,11 @@ nvim
 - `Ctrl+Shift+F10`：快速运行当前文件，python文件会自动设置临时 `PYTHONPATH` ，golang则使用 `go run .` ，markdown使用`MarkdownPreview` 预览- *normal*
 
 - `F10` ：打开/关闭 `Overseer` 插件任务管理窗口 - *normal*
+
+- `<leader>fy`：查找复制的文本，
+  
+  - 使用 `<enter>` 直接粘贴
+  
+  - 普通模式使用 `d` 删除，输入模式使用 `ctrl+d` 删除
+  
+  - 编辑普通模式使用 `e` ，输入模式使用 `ctrl+e`

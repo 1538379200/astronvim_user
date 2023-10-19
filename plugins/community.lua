@@ -25,6 +25,7 @@ return {
   { import = "astrocommunity.colorscheme.rose-pine"},
   { import = "astrocommunity.test.neotest"},
   { import = "astrocommunity.code-runner.overseer-nvim"},
+  { import = "astrocommunity.register.nvim-neoclip-lua"},
 
   -- { import = "astrocommunity.editing-support.auto-save-nvim" }
   -- { import = "astrocommunity.colorscheme.catppuccin" },
