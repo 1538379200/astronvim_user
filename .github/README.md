@@ -51,6 +51,8 @@ nvim
 
 `astronvim` 默认映射：https://astronvim.com/Basic%20Usage/mappings
 
+- `s` ：flask插件文字搜索 -- *normal*
+
 - `Alt + j/k`：函数间上下跳转 -- *normal*
 
 - `Alt + h/l`：跳转左右标签（buffer）-- *normal*
@@ -67,9 +69,16 @@ nvim
 
 - `Ctrl+F12`：侧边栏展示页面中所有函数变量等 -- *normal*
 
+- `F12`：lspsaga的outline，悬浮窗口形式 -- *normal*
+  
+  - `<Enter>`：跳转
+  - `q`：关闭
+
 - `Ctrl+Shift+h/l`：输入模式下跳转行头行尾 -- *insert*
 
 - `<leader>a`：选择生成不同的注释结构（可以使用 `luasnip` 的跳转功能）-- *normal*
+  
+  - 常用如：`<leader>af`，为当前函数生成注释
 
 - `Ctrl+Enter`：`luasnip` 的向下跳转 -- *insert*
 
@@ -80,11 +89,6 @@ nvim
 - `Ctrl+s`：插入和普通模式强制保存 -- *normal, insert*
 
 - `]e`：跳转到下一个错误，`[e` 跳转上一个错误 -- *normal*
-
-- `F12`：lspsaga的outline，悬浮窗口形式 -- *normal*
-  
-  - `<Enter>`：跳转
-  - `q`：关闭
 
 - `]t/[t`：上一个和下一个 todo 标记 -- *normal*
 
@@ -112,4 +116,8 @@ nvim
   
   - 依赖于 `ripgrep` 的过滤，可以参考[ripgrep/GUIDE.md at master · BurntSushi/ripgrep (github.com)](https://github.com/BurntSushi/ripgrep/blob/master/GUIDE.md)
 
-- `<leader>ZM` ：开始禅模式，ZenMode，更纯净的代码编写模式
+- `<leader>ZM` ：开始禅模式，ZenMode，更纯净的代码编写模式 - *normal*
+
+- `Ctrl+Shift+F10`：快速运行当前文件，python文件会自动设置临时 `PYTHONPATH` ，golang则使用 `go run .` ，markdown使用`MarkdownPreview` 预览- *normal*
+
+- `F10` ：打开/关闭 `Overseer` 插件任务管理窗口 - *normal*
