@@ -1,15 +1,22 @@
 local utils = require "astronvim.utils"
 return {
     {
+        "rcarriga/nvim-notify",
+        opts = function(_, opts)
+            opts.timeout = 300
+            opts.stages = "slide"
+        end
+    },
+    {
         "folke/noice.nvim",
-        -- event = "VeryLazy",
-        event = "VimEnter",
+        event = "VeryLazy",
+        -- event = "VimEnter",
         -- cond = not vim.g.neovide,
         dependencies = { "MunifTanjim/nui.nvim" },
         opts = function(_, opts)
             return utils.extend_tbl(opts, {
                 notify = {
-                    enabled = false
+                    enabled = false,
                 },
                 lsp = {
                     -- override markdown rendering so that **cmp** and other plugins use **Treesitter**
@@ -20,7 +27,7 @@ return {
                     },
                 },
                 presets = {
-                    bottom_search = false,                              -- use a classic bottom cmdline for search
+                    bottom_search = false,                             -- use a classic bottom cmdline for search
                     command_palette = true,                            -- position the cmdline and popupmenu together
                     long_message_to_split = true,                      -- long messages will be sent to a split
                     inc_rename = utils.is_available "inc-rename.nvim", -- enables an input dialog for inc-rename.nvim

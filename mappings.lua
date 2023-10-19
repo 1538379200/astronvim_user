@@ -9,6 +9,7 @@ return {
     -- second key is the lefthand side of the map
     -- mappings seen under group name "Buffer"
     ["<leader>bn"] = { "<cmd>tabnew<cr>", desc = "New tab" },
+    ["<C-s>"] = { "<cmd>w<cr>", desc="保存"},
     ["<leader>bD"] = {
       function()
         require("astronvim.utils.status").heirline.buffer_picker(function(bufnr)
@@ -74,7 +75,7 @@ return {
     ["<C-z>"] = { "<cmd>undo<cr>" },
     ["<C-S-l>"] = { "<C-o>$" },
     ["<C-S-h>"] = { "<C-o>^" },
-    ["<C-s>"] = { "<cmd>w!<cr>", desc = "Force write" },
+    ["<C-s>"] = { "<cmd>w<cr>", desc = "Force write" },
     ["<C-Enter>"] = { function() require("luasnip").jump(1) end, desc = "luasnip向下跳转" },
     ["<C-S-Enter>"] = { function() require("luasnip").jump(-1) end, desc = "luasnip向上跳转" }
   },
