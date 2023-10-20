@@ -10,6 +10,16 @@ function match_pycmd()
     return cmd
 end
 
+function set_ime(args)
+    if vim.g.neovide then
+        if args.event:match("Enter$") then
+            vim.g.neovide_input_ime = true
+        else
+            vim.g.neovide_input_ime = false
+        end
+    end
+end
+
 return {
     vim.api.nvim_create_autocmd("BufEnter", {
         desc = "QuickRunner",
@@ -43,5 +53,11 @@ return {
                 )
             end
         end
+    }),
+
+    vim.api.nvim_create_autocmd({ "InsertEnter", "InsertLeave" }, {
+        group = vim.api.nvim_create_augroup("ime_input", { clear = true }),
+        pattern = "*",
+        callback = set_ime
     })
 }
