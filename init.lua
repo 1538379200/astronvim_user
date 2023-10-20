@@ -23,6 +23,7 @@ return {
   -- colorscheme = "onedark_vivid",
   colorscheme = "github_dark",
   -- colorscheme = "rose-pine",
+  -- colorscheme = "aura-soft-dark",
 
   -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
   diagnostics = {

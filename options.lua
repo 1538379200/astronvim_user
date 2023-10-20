@@ -1,3 +1,12 @@
+-- 组合 iskeyword 表，增加 iskeyword 值
+function keywords(...)
+  local keys = vim.opt.iskeyword:get()
+  for _, v in ipairs { ... } do
+    table.insert(keys, v)
+  end
+  return keys
+end
+
 -- set vim options here (vim.<first_key>.<second_key> = value)
 return {
   opt = {
@@ -13,6 +22,7 @@ return {
     linespace = 6,
     ignorecase = true,
     autoindent = true,
+    iskeyword = keywords("-"),
   },
   g = {
     mapleader = " ",                 -- sets vim.g.mapleader
@@ -38,7 +48,7 @@ return {
 
     -- Iosevka: https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Iosevka/Medium
     -- guifont = "Iosevka Nerd Font Mono:h10"
-    
+
     -- guifont = "JetBrainsMono Nerd Font Mono:h10"
   },
 }
