@@ -59,5 +59,15 @@ return {
         group = vim.api.nvim_create_augroup("ime_input", { clear = true }),
         pattern = "*",
         callback = set_ime
+    }),
+
+    vim.api.nvim_create_autocmd({ "TermOpen" }, {
+        group = vim.api.nvim_create_augroup("term_mapping", { clear = true }),
+        pattern = "term://*",
+        callback = function()
+            local opts = { buffer = 0 }
+            vim.keymap.set("t", "<esc>", [[<C-\><C-n>]], opts)
+            vim.keymap.set("t", "<C-w>", [[<C-\><C-n><C-w>]], opts)
+        end
     })
 }
