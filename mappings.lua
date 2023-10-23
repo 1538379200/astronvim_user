@@ -63,6 +63,9 @@ return {
     ["d"] = { "\"_d", desc="删除不剪切"},
     ["D"] = {"\"_D", desc="删除不剪切"},
     ["X"] = { "\"_X", desc="删除不剪切"},
+
+    -- LspRestart，将所有 <leader>R 开头的都作为重启某项服务的前缀
+    ["<Leader>Rl"] = { "<cmd>LspRestart<cr>", desc = "重启LSP服务" },
   },
   t = {
     -- setting a mapping to false will disable it
