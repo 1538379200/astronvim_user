@@ -120,7 +120,15 @@ nvim
 
 - `<leader>ZM` ：开始禅模式，ZenMode，更纯净的代码编写模式 - *normal*
 
-- `Ctrl+Shift+F10`：快速运行当前文件，python文件会自动设置临时 `PYTHONPATH` ，golang则使用 `go run .` ，markdown使用`MarkdownPreview` 预览- *normal*
+- `Ctrl+Shift+F10`：快速运行当前文件  -- *normal*
+  
+  - python文件会自动设置临时 `PYTHONPATH` ，并运行当前文件
+  
+  - golang则使用 `go run .` 
+  
+  - markdown使用`MarkdownPreview` 预览
+  
+  - rust使用 `cargo run.` 运行
 
 - `F10` ：打开/关闭 `Overseer` 插件任务管理窗口 - *normal*
 
@@ -131,4 +139,5 @@ nvim
   - 普通模式使用 `d` 删除，输入模式使用 `ctrl+d` 删除
   
   - 编辑普通模式使用 `e` ，输入模式使用 `ctrl+e`
+
 - `<leader>Rl`：重启 `LSP` 服务，后续 `<leader>R` 前缀的将都作为重启/刷新某服务的前缀
