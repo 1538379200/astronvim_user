@@ -10,6 +10,11 @@ function match_pycmd()
     return cmd
 end
 
+function match_others(cmd)
+    script = string.format("<cmd>TermExec direction=float cmd=\"%s\"<cr>", cmd)
+    return script
+end
+
 function set_ime(args)
     if vim.g.neovide then
         if args.event:match("Enter$") then
@@ -48,7 +53,16 @@ return {
                     0,
                     "n",
                     "<C-S-F10>",
-                    "<cmd>go run .<cr>",
+                    -- "<cmd>go run .<cr>",
+                    match_others("go run ."),
+                    { silent = true, noremap = true }
+                )
+            elseif filetype == "rust" then
+                vim.api.nvim_buf_set_keymap(
+                    0,
+                    "n",
+                    "<C-S-F10>",
+                    match_others("cargo run ."),
                     { silent = true, noremap = true }
                 )
             end
