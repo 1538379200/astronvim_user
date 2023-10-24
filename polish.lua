@@ -1,3 +1,4 @@
+-- 计算python的执行命令，如果没有打开过 toggleterm 将进行 PYTHONPATH 环境配置
 function match_pycmd()
     local state = require("neo-tree.sources.manager").get_state("filesystem")
     local project_path = state.path
@@ -10,11 +11,25 @@ function match_pycmd()
     return cmd
 end
 
+-- 非 python 文件的运行命令配置
 function match_others(cmd)
     script = string.format("<cmd>TermExec direction=float cmd=\"%s\"<cr>", cmd)
     return script
 end
 
+-- 打开外部 terminal 配置，可以自定义设置不同 terminal 名称
+function open_outer_terminal(terminal_name)
+    local is_win = vim.fn.has("win32")
+    local script = ""
+    if is_win then
+        script = string.format("<cmd>!start %s<cr>", terminal_name)
+    else
+        script = "only Windows"
+    end
+    return script
+end
+
+-- 如果当前编辑器为 neovide，当进入普通模式时，将自动切换英文输入法
 function set_ime(args)
     if vim.g.neovide then
         if args.event:match("Enter$") then
@@ -26,6 +41,7 @@ function set_ime(args)
 end
 
 return {
+    -- 针对不同文件配置不同的运行命令
     vim.api.nvim_create_autocmd("BufEnter", {
         desc = "QuickRunner",
         pattern = "*",
@@ -69,12 +85,14 @@ return {
         end
     }),
 
+    -- 使用 neovide 时，可以自动切换中英文输入
     vim.api.nvim_create_autocmd({ "InsertEnter", "InsertLeave" }, {
         group = vim.api.nvim_create_augroup("ime_input", { clear = true }),
         pattern = "*",
         callback = set_ime
     }),
 
+    -- 对 terminal界面简化操作，ESC回到普通模式，直接可以切换窗口
     vim.api.nvim_create_autocmd({ "TermOpen" }, {
         group = vim.api.nvim_create_augroup("term_mapping", { clear = true }),
         pattern = "term://*",
@@ -82,6 +100,22 @@ return {
             local opts = { buffer = 0 }
             vim.keymap.set("t", "<esc>", [[<C-\><C-n>]], opts)
             vim.keymap.set("t", "<C-w>", [[<C-\><C-n><C-w>]], opts)
+        end
+    }),
+
+    -- 打开外部 terminal 方案，仅对 windows 设备有效，Shift + F7
+    vim.api.nvim_create_autocmd({ "VimEnter" }, {
+        group = vim.api.nvim_create_augroup("open_outer_terminal", { clear = true }),
+        pattern = "*",
+        callback = function()
+            if vim.fn.has("win32") then
+                vim.api.nvim_set_keymap(
+                    "n",
+                    "<S-F7>",
+                    open_outer_terminal("pwsh"),
+                    { silent = true, noremap = true }
+                )
+            end
         end
     })
 }
