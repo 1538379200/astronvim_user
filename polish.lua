@@ -116,7 +116,7 @@ return {
 
     -- 打开外部 terminal 方案，仅对 windows 设备有效，Shift + F7
     vim.api.nvim_create_autocmd({ "VimEnter" }, {
-        group = vim.api.nvim_create_augroup("open_outer_terminal", { clear = true }),
+        group = vim.api.nvim_create_augroup("open_outer", { clear = true }),
         pattern = "*",
         callback = function()
             if vim.fn.has("win32") then
@@ -124,6 +124,12 @@ return {
                     "n",
                     "<S-F7>",
                     open_outer_terminal(nil),
+                    { silent = true, noremap = true }
+                )
+                vim.api.nvim_set_keymap(
+                    "n",
+                    "<C-E>",
+                    "<cmd>!explorer .<cr>",
                     { silent = true, noremap = true }
                 )
             end
