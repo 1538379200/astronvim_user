@@ -128,7 +128,7 @@ return {
                 )
                 vim.api.nvim_set_keymap(
                     "n",
-                    "<C-E>",
+                    "<leader>E",
                     "<cmd>!explorer .<cr>",
                     { silent = true, noremap = true }
                 )

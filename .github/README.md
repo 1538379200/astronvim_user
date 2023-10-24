@@ -71,7 +71,7 @@ nvim
   
   - 进入 `polish.lua` 文件中，可以填写固定的 `terminal` 配置
 
-- `Ctrl+Shift+e`：快速在当前文件位置打开系统文件管理器，仅在 windows 中有效 -- *normal*
+- `<leader>E`：快速在当前文件位置打开系统文件管理器，仅在 windows 中有效 -- *normal*
 
 - `Ctrl+Shift+F10`：运行代码/预览markdown等 -- *normal*
   
