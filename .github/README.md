@@ -66,6 +66,10 @@ nvim
 - `F7`：打开 `toggleterm`  -- *normal*
 
 - `Shift+F7` ：打开外部的 ternimal，仅windows有效，默认 `pwsh`  -- *normal*
+  
+  - 默认会先查找 `pwsh` 命令是否存在，如果存在，则使用 `pwsh` 命令（PowerShell 7），如果不存在，则打开的为 `cmd` 窗口
+  
+  - 进入 `polish.lua` 文件中，可以填写固定的 `terminal` 配置
 
 - `Ctrl+Shift+F10`：运行代码/预览markdown等 -- *normal*
   

@@ -19,10 +19,21 @@ end
 
 -- 打开外部 terminal 配置，可以自定义设置不同 terminal 名称
 function open_outer_terminal(terminal_name)
+    local stdout = vim.fn.system("pwsh --version")
+    if terminal_name == nil then
+        local version = string.match(stdout, [[%d+%.%d+%.%d+]])
+        if version == nil then
+            term = "cmd"
+        else
+            term = "pwsh"
+        end
+    else
+        term = terminal_name
+    end
     local is_win = vim.fn.has("win32")
     local script = ""
     if is_win then
-        script = string.format("<cmd>!start %s<cr>", terminal_name)
+        script = string.format("<cmd>!start %s<cr>", term)
     else
         script = "only Windows"
     end
@@ -112,7 +123,7 @@ return {
                 vim.api.nvim_set_keymap(
                     "n",
                     "<S-F7>",
-                    open_outer_terminal("pwsh"),
+                    open_outer_terminal(nil),
                     { silent = true, noremap = true }
                 )
             end
