@@ -75,7 +75,7 @@ nvim
 
 - `Ctrl+Shift+F10`：运行代码/预览markdown等 -- *normal*
   
-  - `Ctrl+\`：同 F7 相同的 terminal 窗口，使用 `Ctrl+\` 然后使用 `Ctrl+n` 可回到normal模式（当前已设置，可以直接使用 `ESC` 来返回普通模式，也可以直接使用 `Ctrl+w` 切换窗口，如 `Ctrl+w+l`），normal模式下可以使用 `Ctrl+\` 或 `Ctrl+j/k` 或 `F7` 切换到编辑器中 --*normal*
+- `Ctrl+\`：同 F7 相同的 terminal 窗口，使用 `Ctrl+\` 然后使用 `Ctrl+n` 可回到normal模式（当前已设置，可以直接使用 `ESC` 来返回普通模式，也可以直接使用 `Ctrl+w` 切换窗口，如 `Ctrl+w+l`），normal模式下可以使用 `Ctrl+\` 或 `Ctrl+j/k` 或 `F7` 切换到编辑器中 --*normal*
 
 - `Ctrl+F12`：侧边栏展示页面中所有函数变量等 -- *normal*
 
@@ -83,10 +83,6 @@ nvim
   
   - `<Enter>`：跳转
   - `q`：关闭
-
-- `Ctrl+Shift+h/l`：输入模式下跳转行头行尾 -- *insert*
-  
-  - 如果此方式不生效，你可以使用原始方式，在插入模式时，使用 `ctrl+o` ，之后即可在插入模式时使用普通模式命令，例如，跳转行尾：`Ctrl+o+$` 或者 `Ctrl+o+A` ，跳转行首：`Ctrl+o^` ，当然，跳转行尾直接使用 `esc` 后 `A` 可能更快
 
 - `<leader>a`：选择生成不同的注释结构（可以使用 `luasnip` 的跳转功能）-- *normal*
   

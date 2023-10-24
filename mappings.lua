@@ -76,8 +76,6 @@ return {
     ["<C-l>"] = { "<Right>" },
     ["<C-v>"] = { "<C-r>+" },
     ["<C-z>"] = { "<cmd>undo<cr>" },
-    ["<C-S-l>"] = { "<C-o>$" },
-    ["<C-S-h>"] = { "<C-o>^" },
     ["<C-s>"] = { "<cmd>w<cr>", desc = "Force write" },
     ["<C-Enter>"] = { function() require("luasnip").jump(1) end, desc = "luasnip向下跳转" },
     ["<C-S-Enter>"] = { function() require("luasnip").jump(-1) end, desc = "luasnip向上跳转" }
