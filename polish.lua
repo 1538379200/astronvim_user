@@ -134,5 +134,31 @@ return {
                 )
             end
         end
+    }),
+
+    -- 自定义LuaSnip跳转快捷键
+    vim.api.nvim_create_autocmd("InsertEnter", {
+        group = vim.api.nvim_create_augroup("snip_mapping", { clear = true }),
+        pattern = "*",
+        callback = function()
+            local snip = require("luasnip")
+            if snip.in_snippet() then
+                vim.api.nvim_buf_set_keymap(
+                    0,
+                    "i",
+                    "<Tab>",
+                    [[<cmd>lua require("luasnip").jump(1)<cr>]],
+                    { silent = true, noremap = true }
+                )
+                vim.api.nvim_buf_set_keymap(
+                    0,
+                    "i",
+                    "<S-Tab>",
+                    -- snip.jump(-1),
+                    [[<cmd>lua require("luasnip").jump(-1)<cr>]],
+                    { silent = true, noremap = true }
+                )
+            end
+        end
     })
 }

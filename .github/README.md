@@ -74,7 +74,7 @@ nvim
 - `<leader>E`：快速在当前文件位置打开系统文件管理器，仅在 windows 中有效 -- *normal*
 
 - `Ctrl+Shift+F10`：运行代码/预览markdown等 -- *normal*
-  
+
 - `Ctrl+\`：同 F7 相同的 terminal 窗口，使用 `Ctrl+\` 然后使用 `Ctrl+n` 可回到normal模式（当前已设置，可以直接使用 `ESC` 来返回普通模式，也可以直接使用 `Ctrl+w` 切换窗口，如 `Ctrl+w+l`），normal模式下可以使用 `Ctrl+\` 或 `Ctrl+j/k` 或 `F7` 切换到编辑器中 --*normal*
 
 - `Ctrl+F12`：侧边栏展示页面中所有函数变量等 -- *normal*
@@ -88,9 +88,9 @@ nvim
   
   - 常用如：`<leader>af`，为当前函数生成注释
 
-- `Ctrl+Enter`：`luasnip` 的向下跳转 -- *insert*
-
-- `Ctrl+Shift+Enter`：`luasnip` 向上跳转 -- *insert*
+- `Tab`：
+  
+  - 在 `luasnip` 片段中，并且当前属于 insert 模式，tab跳转下一个编辑，shift+tab 为跳转上一个编辑处  --  *normal*
 
 - `Shift+Enter` ：普通模式下增加一行 -- *normal*
 

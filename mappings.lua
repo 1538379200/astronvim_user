@@ -9,7 +9,7 @@ return {
     -- second key is the lefthand side of the map
     -- mappings seen under group name "Buffer"
     ["<leader>bn"] = { "<cmd>tabnew<cr>", desc = "New tab" },
-    ["<C-s>"] = { "<cmd>w<cr>", desc="保存"},
+    ["<C-s>"] = { "<cmd>w<cr>", desc = "保存" },
     ["<leader>bD"] = {
       function()
         require("astronvim.utils.status").heirline.buffer_picker(function(bufnr)
@@ -58,11 +58,11 @@ return {
 
     -- 使用黑洞寄存器使删除不进行数据剪切
     -- ["d"] = { "\"_d", desc="删除而不剪切"},
-    ["x"] = {"\"_x", desc="删除单个字符不剪切"},
-    ["dd"] = { "\"_dd", desc="删除一行不剪切"},
-    ["d"] = { "\"_d", desc="删除不剪切"},
-    ["D"] = {"\"_D", desc="删除不剪切"},
-    ["X"] = { "\"_X", desc="删除不剪切"},
+    ["x"] = { "\"_x", desc = "删除单个字符不剪切" },
+    ["dd"] = { "\"_dd", desc = "删除一行不剪切" },
+    ["d"] = { "\"_d", desc = "删除不剪切" },
+    ["D"] = { "\"_D", desc = "删除不剪切" },
+    ["X"] = { "\"_X", desc = "删除不剪切" },
 
     -- LspRestart，将所有 <leader>R 开头的都作为重启某项服务的前缀
     ["<Leader>Rl"] = { "<cmd>LspRestart<cr>", desc = "重启LSP服务" },
@@ -76,13 +76,13 @@ return {
     ["<C-l>"] = { "<Right>" },
     ["<C-v>"] = { "<C-r>+" },
     ["<C-z>"] = { "<cmd>undo<cr>" },
-    ["<C-s>"] = { "<cmd>w<cr>", desc = "Force write" },
-    ["<C-Enter>"] = { function() require("luasnip").jump(1) end, desc = "luasnip向下跳转" },
-    ["<C-S-Enter>"] = { function() require("luasnip").jump(-1) end, desc = "luasnip向上跳转" }
+    ["<C-s>"] = { "<cmd>w<cr>", desc = "write" },
+    -- ["<C-Enter>"] = { function() require("luasnip").jump(1) end, desc = "luasnip向下跳转" },
+    -- ["<C-S-Enter>"] = { function() require("luasnip").jump(-1) end, desc = "luasnip向上跳转" }
   },
   v = {
     ["<C-c>"] = { "y" },
-    ["d"] = { "\"_d", desc="删除而不剪切"},
+    ["d"] = { "\"_d", desc = "删除而不剪切" },
     -- ["x"] = { "\"_x", desc="删除不剪切"},
   },
 }

@@ -34,7 +34,7 @@ return {
     icons_enabled = true,            -- disable icons in the UI (disable if no nerd font is available, requires :PackerSync after changing)
     ui_notifications_enabled = true, -- disable notifications when toggling UI elements
     resession_enabled = false,       -- enable experimental resession.nvim session management (will be default in AstroNvim v4)
-    -- neovide_cursor_animation_length = 0
+    neovide_cursor_animation_length = 0,
     neovide_cursor_trail_size = 0.4,
     neovide_hide_mouse_when_typing = true,
     -- 自定义 vim-move 插件的功能键

@@ -35,13 +35,24 @@ return {
 
       return {
         enabled = function()
+          local context = require("cmp.config.context")
           local dap_prompt = utils.is_available "cmp-dap" -- add interoperability with cmp-dap
               and vim.tbl_contains(
                 { "dap-repl", "dapui_watches", "dapui_hover" },
                 vim.api.nvim_get_option_value("filetype", { buf = 0 })
               )
-          if vim.api.nvim_get_option_value("buftype", { buf = 0 }) == "prompt" and not dap_prompt then return false end
-          return vim.g.cmp_enabled
+          local old_status = vim.g.cmp_enabled
+          -- if vim.api.nvim_get_option_value("buftype", { buf = 0 }) == "prompt" and not dap_prompt then return false end
+          if vim.api.nvim_get_option_value("buftype", { buf = 0 }) == "prompt" and not dap_prompt then
+            old_status = false
+          end
+          if vim.api.nvim_get_mode().mode then
+            old_status = true
+          else
+            old_status = not context.in_treesitter_capture("comment") and not context.in_syntax_group("Comment")
+          end
+          -- return vim.g.cmp_enabled
+          return old_status
         end,
         preselect = cmp.PreselectMode.None,
         formatting = {
@@ -102,10 +113,16 @@ return {
           -- end, { "i", "s" }),
         },
         sources = cmp.config.sources {
-          { name = "nvim_lsp", priority = 1000 },
-          { name = "luasnip",  priority = 750 },
-          { name = "buffer",   priority = 500 },
-          { name = "path",     priority = 250 },
+          {
+            name = "nvim_lsp",
+            priority = 1000,
+            entry_filter = function(entry, ctx)
+              return require("cmp.types").lsp.CompletionItemKind[entry:get_kind()] ~= 'Text'
+            end
+          },
+          { name = "luasnip", priority = 750 },
+          { name = "buffer",  priority = 500 },
+          { name = "path",    priority = 250 },
         },
       }
     end,
