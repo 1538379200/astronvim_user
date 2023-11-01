@@ -22,7 +22,7 @@ return {
         enable = true,
         disable = false,
       },
-      textobjects = object,
+      -- textobjects = object,
       incremental_selection = {
         enable = true,
         keymaps = {
