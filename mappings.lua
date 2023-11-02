@@ -25,8 +25,9 @@ return {
       function() require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
       desc = "Previous buffer",
     },
-    ["<A-j>"] = "<cmd>norm ]m<cr>",
-    ["<A-k>"] = "<cmd>norm [m<cr>",
+    -- 方法间移动，并进行居中处理
+    ["<A-j>"] = "<cmd>norm ]m zz<cr>",
+    ["<A-k>"] = "<cmd>norm [m zz<cr>",
     -- todo-comments 相关设置
     ["<leader>fT"] = { "<cmd>TodoTelescope<cr>", desc = "搜索TODO" },
     ["<leader>Tl"] = { "<cmd>TodoLocList<cr>", desc = "TODO列表" },

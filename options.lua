@@ -44,7 +44,9 @@ return {
   o = {
     -- guifont = "FiraCode NFM:h10"
     -- guifont = "Monaco:h9"
-    guifont = "GoMono NFM:h10"
+    -- guifont = "GoMono NFM:h10"
+    -- guifont = "Inconsolata Nerd Font Mono:h11"
+    guifont = "Noto Sans Mono:h10"
 
     -- Iosevka: https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Iosevka/Medium
     -- guifont = "Iosevka Nerd Font Mono:h10"
