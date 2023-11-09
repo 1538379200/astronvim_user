@@ -34,7 +34,7 @@ return {
     icons_enabled = true,            -- disable icons in the UI (disable if no nerd font is available, requires :PackerSync after changing)
     ui_notifications_enabled = true, -- disable notifications when toggling UI elements
     resession_enabled = false,       -- enable experimental resession.nvim session management (will be default in AstroNvim v4)
-    neovide_cursor_animation_length = 0,
+    -- neovide_cursor_animation_length = 0,
     neovide_cursor_trail_size = 0.4,
     neovide_hide_mouse_when_typing = true,
     -- 自定义 vim-move 插件的功能键
@@ -46,7 +46,8 @@ return {
     -- guifont = "Monaco:h9"
     -- guifont = "GoMono NFM:h10"
     -- guifont = "Inconsolata Nerd Font Mono:h11"
-    guifont = "Noto Sans Mono:h10"
+    -- guifont = "NotoMono Nerd Font Mono:h10"
+    guifont = "NotoSansM Nerd Font Mono:h10"
 
     -- Iosevka: https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Iosevka/Medium
     -- guifont = "Iosevka Nerd Font Mono:h10"

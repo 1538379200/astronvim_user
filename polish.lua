@@ -51,6 +51,24 @@ function set_ime(args)
     end
 end
 
+-- 删除luasnip映射方法
+function remove_tab()
+    vim.api.nvim_buf_del_keymap(
+        0,
+        "i",
+        "<Tab>"
+    )
+    vim.api.nvim_buf_del_keymap(
+        0,
+        "i",
+        "<S-Tab>"
+    )
+end
+
+function call_remove()
+    pcall(remove_tab)
+end
+
 return {
     -- 针对不同文件配置不同的运行命令
     vim.api.nvim_create_autocmd("BufEnter", {
@@ -137,6 +155,8 @@ return {
     }),
 
     -- 自定义LuaSnip跳转快捷键
+    -- InsertEnter set tab to jump next
+    -- InsertLeave delete tab keymap
     vim.api.nvim_create_autocmd("InsertEnter", {
         group = vim.api.nvim_create_augroup("snip_mapping", { clear = true }),
         pattern = "*",
@@ -160,5 +180,10 @@ return {
                 )
             end
         end
+    }),
+    vim.api.nvim_create_autocmd("InsertLeave", {
+        group = vim.api.nvim_create_augroup("del_snip_mapping", { clear = true }),
+        pattern = "*",
+        callback = call_remove
     })
 }
