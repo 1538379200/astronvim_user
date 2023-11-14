@@ -136,6 +136,12 @@ nvim
   
   - rust使用 `cargo run.` 运行
 
+- `Ctrl+Shift+Alt+F10`：使用外部命令行工具运行文件  -- *normal*
+  
+  - 如果安装了 `PowerShell 7` 的工具，能使用 `pwsh` 调用命令，则会优先使用 `pwsh` 命令
+  
+  - 仅在 `Windows` 中生效
+
 - `F10` ：打开/关闭 `Overseer` 插件任务管理窗口 - *normal*
 
 - `<leader>fy`：查找复制的文本，也可以使用 `Win+v` 拿windows的系统粘贴板，因为vim的寄存器和系统粘贴板是互通的，但是插件是没有系统粘贴板的历史内容的

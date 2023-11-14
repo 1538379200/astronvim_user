@@ -11,9 +11,44 @@ function match_pycmd()
     return cmd
 end
 
+-- 计算当前设备可用的命令行工具
+function match_terminal()
+    local stdout = vim.fn.system("pwsh --version")
+    local version = string.match(stdout, [[%d+%.%d+%.%d+]])
+    if version == nil then
+        term = "cmd"
+    else
+        term = "pwsh"
+    end
+    return term
+end
+
+-- 创建通过外部命令行运行的脚本
+function match_py_outer_cmd()
+    local term = match_terminal()
+    local pycmd = ""
+    if term == "pwsh" then
+        pycmd = "<cmd>!start pwsh -NoExit -c \"py %\"<cr>"
+    else
+        pycmd = "<cmd>!start cmd /K \"py %\"<cr>"
+    end
+    return pycmd
+end
+
 -- 非 python 文件的运行命令配置
 function match_others(cmd)
     script = string.format("<cmd>TermExec direction=float cmd=\"%s\"<cr>", cmd)
+    return script
+end
+
+function match_others_outer(cmd)
+    local term = match_terminal()
+    local script
+    if term == "pwsh" then
+        script = string.format("<cmd>!start pwsh -NoExit -c \"%s\"<cr>", cmd)
+    else
+        script = string.format("<cmd>!start cmd /K \"%s\"", cmd)
+    end
     return script
 end
 
@@ -85,6 +120,13 @@ return {
                     match_pycmd(),
                     { silent = true, noremap = true }
                 )
+                vim.api.nvim_buf_set_keymap(
+                    0,
+                    "n",
+                    "<C-S-A-F10>",
+                    match_py_outer_cmd(),
+                    { silent = true, noremap = true }
+                )
             elseif filetype == "markdown" then
                 vim.api.nvim_buf_set_keymap(
                     0,
@@ -102,12 +144,27 @@ return {
                     match_others("go run ."),
                     { silent = true, noremap = true }
                 )
+                vim.api.nvim_buf_set_keymap(
+                    0,
+                    "n",
+                    "<C-S-A-F10>",
+                    -- "<cmd>go run .<cr>",
+                    match_others_outer("go run ."),
+                    { silent = true, noremap = true }
+                )
             elseif filetype == "rust" then
                 vim.api.nvim_buf_set_keymap(
                     0,
                     "n",
                     "<C-S-F10>",
                     match_others("cargo run ."),
+                    { silent = true, noremap = true }
+                )
+                vim.api.nvim_buf_set_keymap(
+                    0,
+                    "n",
+                    "<C-S-A-F10>",
+                    match_others_outer("cargo run ."),
                     { silent = true, noremap = true }
                 )
             end

@@ -46,7 +46,7 @@ return {
           if vim.api.nvim_get_option_value("buftype", { buf = 0 }) == "prompt" and not dap_prompt then
             old_status = false
           end
-          if vim.api.nvim_get_mode().mode then
+          if vim.api.nvim_get_mode().mode == "c" then
             old_status = true
           else
             old_status = not context.in_treesitter_capture("comment") and not context.in_syntax_group("Comment")

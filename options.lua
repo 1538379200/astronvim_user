@@ -19,7 +19,7 @@ return {
     tabstop = 4,
     shiftwidth = 4,
     clipboard = 'unnamedplus',
-    linespace = 6,
+    linespace = 10,
     ignorecase = true,
     autoindent = true,
     iskeyword = keywords("-"),
@@ -45,9 +45,9 @@ return {
     -- guifont = "FiraCode NFM:h10"
     -- guifont = "Monaco:h9"
     -- guifont = "GoMono NFM:h10"
-    -- guifont = "Inconsolata Nerd Font Mono:h11"
+    guifont = "Inconsolata Nerd Font Mono:h10"
     -- guifont = "NotoMono Nerd Font Mono:h10"
-    guifont = "NotoSansM Nerd Font Mono:h10"
+    -- guifont = "NotoSansM Nerd Font Mono:h10"
 
     -- Iosevka: https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Iosevka/Medium
     -- guifont = "Iosevka Nerd Font Mono:h10"

@@ -19,7 +19,9 @@ return {
 
   -- Set colorscheme to use
   -- colorscheme = "astrodark",
-  colorscheme = "catppuccin-frappe",
+  -- colorscheme = "catppuccin-frappe",
+  colorscheme = "catppuccin-macchiato",
+  -- colorscheme = "catppuccin-mocha",
   -- colorscheme = "onedark_vivid",
   -- colorscheme = "github_dark",
   -- colorscheme = "rose-pine",
