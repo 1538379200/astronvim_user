@@ -21,6 +21,7 @@ return {
   -- colorscheme = "astrodark",
   -- colorscheme = "catppuccin-frappe",
   colorscheme = "catppuccin-macchiato",
+  -- colorscheme = "vscode",
   -- colorscheme = "catppuccin-mocha",
   -- colorscheme = "onedark_vivid",
   -- colorscheme = "github_dark",

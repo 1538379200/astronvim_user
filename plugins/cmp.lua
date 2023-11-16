@@ -124,6 +124,56 @@ return {
           { name = "buffer",  priority = 500 },
           { name = "path",    priority = 250 },
         },
+        lsp = {
+          config = {
+            pyright = {
+              settings = {
+                ["pyright"] = {
+                  completion = {
+                    postfix = {
+                      enable = false,
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+        sorting = {
+          comparators = {
+            cmp.config.compare.offset,
+            cmp.config.compare.exact,
+            cmp.config.compare.score,
+
+            -- copied from cmp-under, but I don't think I need the plugin for this.
+            -- I might add some more of my own.
+            function(entry1, entry2)
+              local _, entry1_under = entry1.completion_item.label:find "^__+"
+              local _, entry2_under = entry2.completion_item.label:find "^__+"
+              entry1_under = entry1_under or 0
+              entry2_under = entry2_under or 0
+              if entry1_under > entry2_under then
+                return false
+              elseif entry1_under < entry2_under then
+                return true
+              end
+            end,
+
+            cmp.config.compare.kind,
+            cmp.config.compare.sort_text,
+            cmp.config.compare.length,
+            cmp.config.compare.order,
+            function(entry1, entry2)
+              local entry1_under = require("cmp.types").lsp.CompletionItemKind[entry1:get_kind()]
+              -- local _, entry2_under = require("cmp.types").lsp.CompletionItemKind[entry2:get_kind()]
+              if entry1_under == "Text" then
+                return false
+              else
+                return true
+              end
+            end
+          },
+        }
       }
     end,
   },
