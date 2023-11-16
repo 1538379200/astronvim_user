@@ -117,7 +117,12 @@ return {
             name = "nvim_lsp",
             priority = 1000,
             entry_filter = function(entry, ctx)
-              return require("cmp.types").lsp.CompletionItemKind[entry:get_kind()] ~= 'Text'
+              -- return require("cmp.types").lsp.CompletionItemKind[entry:get_kind()] ~= 'Text'
+              if entry.completion_item.kind == 1 then
+                return false
+              else
+                return true
+              end
             end
           },
           { name = "luasnip", priority = 750 },
@@ -145,6 +150,22 @@ return {
             cmp.config.compare.exact,
             cmp.config.compare.score,
 
+            function(entry1, entry2)
+              if entry1 ~= nil and entry2 ~= nil then
+                local entry1_kind = entry1.completion_item.kind
+                local entry2_kind = entry2.completion_item.kind
+                entry1_kind = entry1_kind or 0
+                entry2_kind = entry2_kind or 0
+                if entry1_kind < entry2_kind then
+                  return false
+                elseif entry1_kind > entry2_kind then
+                  return true
+                end
+              else
+                return nil
+              end
+            end,
+
             -- copied from cmp-under, but I don't think I need the plugin for this.
             -- I might add some more of my own.
             function(entry1, entry2)
@@ -158,20 +179,10 @@ return {
                 return true
               end
             end,
-
             cmp.config.compare.kind,
             cmp.config.compare.sort_text,
             cmp.config.compare.length,
             cmp.config.compare.order,
-            function(entry1, entry2)
-              local entry1_under = require("cmp.types").lsp.CompletionItemKind[entry1:get_kind()]
-              -- local _, entry2_under = require("cmp.types").lsp.CompletionItemKind[entry2:get_kind()]
-              if entry1_under == "Text" then
-                return false
-              else
-                return true
-              end
-            end
           },
         }
       }
