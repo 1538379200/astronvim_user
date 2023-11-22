@@ -89,6 +89,7 @@ return {
           ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
           ["<C-y>"] = cmp.config.disable,
           ["<C-z>"] = cmp.mapping { i = cmp.mapping.abort(), c = cmp.mapping.close() },
+          ["<C-e>"] = cmp.mapping { i = cmp.mapping.abort(), c = cmp.mapping.close() },
           ["<CR>"] = cmp.mapping.confirm { select = false },
           ["<Tab>"] = cmp.mapping.confirm { select = true },
           -- ["<Tab>"] = cmp.mapping(function(fallback)
@@ -118,7 +119,9 @@ return {
             priority = 1000,
             entry_filter = function(entry, ctx)
               -- return require("cmp.types").lsp.CompletionItemKind[entry:get_kind()] ~= 'Text'
-              if entry.completion_item.kind == 1 then
+              local kind = entry:get_kind()
+              kind = kind or 100
+              if kind == require("cmp.types").lsp.CompletionItemKind.Text then
                 return false
               else
                 return true
@@ -149,28 +152,31 @@ return {
             cmp.config.compare.offset,
             cmp.config.compare.exact,
             cmp.config.compare.score,
+            -- cmp.config.compare.length,
+            cmp.config.compare.kind,
+
+            -- function(entry1, entry2)
+            --   local types = require("cmp.types")
+            --   local entry1_kind = entry1:get_kind()
+            --   local entry2_kind = entry2:get_kind()
+            --   -- entry1_kind = entry1_kind == types.lsp.CompletionItemKind.Text and 100 or entry1_kind
+            --   -- entry2_kind = entry2_kind == types.lsp.CompletionItemKind.Text and 100 or entry2_kind
+            --   entry1_kind = entry1_kind or 100
+            --   entry2_kind = entry2_kind or 100
+            --   if entry1_kind ~= entry2_kind then
+            --     if entry1_kind == types.lsp.CompletionItemKind.Text then
+            --       return false
+            --     else
+            --       return true
+            --     end
+            --   else
+            --     return true
+            --   end
+            -- end,
 
             function(entry1, entry2)
-              if entry1 ~= nil and entry2 ~= nil then
-                local entry1_kind = entry1.completion_item.kind
-                local entry2_kind = entry2.completion_item.kind
-                entry1_kind = entry1_kind or 0
-                entry2_kind = entry2_kind or 0
-                if entry1_kind < entry2_kind then
-                  return false
-                elseif entry1_kind > entry2_kind then
-                  return true
-                end
-              else
-                return nil
-              end
-            end,
-
-            -- copied from cmp-under, but I don't think I need the plugin for this.
-            -- I might add some more of my own.
-            function(entry1, entry2)
-              local _, entry1_under = entry1.completion_item.label:find "^__+"
-              local _, entry2_under = entry2.completion_item.label:find "^__+"
+              local _, entry1_under = entry1.completion_item.label:find "^_+"
+              local _, entry2_under = entry2.completion_item.label:find "^_+"
               entry1_under = entry1_under or 0
               entry2_under = entry2_under or 0
               if entry1_under > entry2_under then
@@ -179,10 +185,10 @@ return {
                 return true
               end
             end,
-            cmp.config.compare.kind,
-            cmp.config.compare.sort_text,
-            cmp.config.compare.length,
-            cmp.config.compare.order,
+            -- cmp.config.compare.kind,
+            -- cmp.config.compare.sort_text,
+            -- cmp.config.compare.length,
+            -- cmp.config.compare.order,
           },
         }
       }
