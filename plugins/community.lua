@@ -27,6 +27,7 @@ return {
   { import = "astrocommunity.test.neotest"},
   { import = "astrocommunity.code-runner.overseer-nvim"},
   { import = "astrocommunity.register.nvim-neoclip-lua"},
+  { import = "astrocommunity.completion.cmp-cmdline"},
   -- { import = "astrocommunity.completion.copilot-lua-cmp"},
 
   -- { import = "astrocommunity.editing-support.auto-save-nvim" }
