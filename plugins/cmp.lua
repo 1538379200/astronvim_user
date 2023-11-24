@@ -4,6 +4,7 @@ return {
     opts = function(_, opts)
       local cmp = require("cmp")
       local utils = require("astronvim.utils")
+      local lspkind = require("lspkind")
       opts.sources = cmp.config.sources {
         {
           name = "nvim_lsp",
@@ -16,6 +17,13 @@ return {
         { name = "path",    priority = 250 },
       }
       return utils.extend_tbl(opts, {
+        formatting = {
+          format = lspkind.cmp_format({
+            mode = "symbol",
+            maxwidth = 60,
+            ellipsis_char = "..."
+          })
+        },
         mapping = {
           ["<Up>"] = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Select },
           ["<Down>"] = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Select },
