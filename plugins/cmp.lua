@@ -18,6 +18,7 @@ return {
       }
       return utils.extend_tbl(opts, {
         formatting = {
+          -- fields = {"abbr", "kind", "menu"},
           format = lspkind.cmp_format({
             mode = "symbol",
             minwidth = 60,
@@ -43,6 +44,23 @@ return {
         },
         sorting = {
           comparators = {
+            -- 提升关键字的优先级
+            function(entry1, entry2)
+              local kind1 = entry1.completion_item.kind
+              local kind2 = entry2.completion_item.kind
+              kind1 = kind1 or 0
+              kind2 = kind2 or 0
+              if kind1 ~= kind2 then
+                if require("cmp.types").lsp.CompletionItemKind[kind1] == "Keyword" then
+                -- if kind1 == 14 then
+                  return true
+                elseif require("cmp.types").lsp.CompletionItemKind[kind1] == "Snippet" then
+                    return false
+                else
+                  return false
+                end
+              end
+            end,
             cmp.config.compare.offset,
             cmp.config.compare.exact,
             cmp.config.compare.score,
