@@ -63,4 +63,15 @@ return {
             })
         end
     },
+    {
+        "folke/tokyonight.nvim",
+        opts = function(_, opts)
+            return require("astronvim.utils").extend_tbl(opts, {
+                styles = {
+                    comments = { italic = false },
+                    keywords = { italic = false }
+                }
+            })
+        end
+    },
 }

@@ -19,15 +19,18 @@ return {
 
   -- Set colorscheme to use
   -- colorscheme = "astrodark",
-  colorscheme = "catppuccin-frappe",
+  -- colorscheme = "catppuccin-frappe",
   -- colorscheme = "catppuccin-macchiato",
     -- colorscheme = "catppuccin-mocha",
   -- colorscheme = "catppuccin-latte",
   -- colorscheme = "vscode",
   -- colorscheme = "onedark_vivid",
+  -- colorscheme = "onedark",
   -- colorscheme = "github_dark",
   -- colorscheme = "rose-pine",
   -- colorscheme = "aura-soft-dark",
+  -- colorscheme = "tokyonight-moon",
+  colorscheme = "tokyonight-storm",
 
   -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
   diagnostics = {
