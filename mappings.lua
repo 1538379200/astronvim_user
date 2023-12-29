@@ -82,6 +82,7 @@ return {
     ["<C-s>"] = { "<cmd>w<cr>", desc = "write" },
     -- ["<C-Enter>"] = { function() require("luasnip").jump(1) end, desc = "luasnip向下跳转" },
     -- ["<C-S-Enter>"] = { function() require("luasnip").jump(-1) end, desc = "luasnip向上跳转" }
+    ["<C-k>"] = { "<cmd>norm zz<cr>", desc = "norm zz" }
   },
   v = {
     ["<C-c>"] = { "y" },

@@ -23,6 +23,8 @@ return {
     ignorecase = true,
     autoindent = true,
     iskeyword = keywords("-"),
+    -- undofile = true,
+    -- undodir = "./"
   },
   g = {
     mapleader = " ",                 -- sets vim.g.mapleader
@@ -39,7 +41,11 @@ return {
     neovide_hide_mouse_when_typing = true,
     -- 自定义 vim-move 插件的功能键
     move_key_modifier = "",
-    move_key_modifier_visualmode = "S"
+    move_key_modifier_visualmode = "S",
+    -- 设置 mundo 打开位置
+    mundo_right = 1,
+    mundo_close_on_revert = 1,
+    mundo_width = 80,
   },
   o = {
     -- guifont = "FiraCode NFM:h10"
