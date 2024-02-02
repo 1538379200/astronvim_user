@@ -51,7 +51,8 @@ return {
     -- guifont = "FiraCode NFM:h10"
     -- guifont = "Monaco:h9"
     -- guifont = "GoMono NFM:h10"
-    guifont = "Inconsolata Nerd Font Mono:h10"
+    -- guifont = "Inconsolata Nerd Font Mono:h10"
+    guifont = "CaskaydiaCove Nerd Font:h9"
     -- guifont = "NotoMono Nerd Font Mono:h10"
     -- guifont = "NotoSansM Nerd Font Mono:h10"
 

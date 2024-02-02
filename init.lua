@@ -25,12 +25,13 @@ return {
   -- colorscheme = "catppuccin-latte",
   -- colorscheme = "vscode",
   -- colorscheme = "onedark_vivid",
+  colorscheme = "onelight",
   -- colorscheme = "onedark",
   -- colorscheme = "github_dark",
   -- colorscheme = "rose-pine",
   -- colorscheme = "aura-soft-dark",
   -- colorscheme = "tokyonight-moon",
-  colorscheme = "tokyonight-storm",
+  -- colorscheme = "tokyonight-storm",
 
   -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
   diagnostics = {
