@@ -47,6 +47,22 @@ git clone https://github.com/1538379200/astronvim_user.git $env:LOCALAPPDATA\nvi
 nvim
 ```
 
+## 
+
+## 可能需要的环境配置
+
+- node.js
+
+- [ripgrep](https://github.com/BurntSushi/ripgrep)
+
+- python
+
+- golang
+
+- rust
+
+- markmap（`npm install -g markmap-cli`）
+
 ## 修改快捷键
 
 `astronvim` 默认映射：https://astronvim.com/Basic%20Usage/mappings

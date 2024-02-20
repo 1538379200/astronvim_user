@@ -3,6 +3,7 @@
 -- Please use this mappings table to set keyboard mapping since this is the
 -- lower level configuration and more robust one. (which-key will
 -- automatically pick-up stored data by this setting.)
+
 return {
   -- first key is the mode
   n = {
@@ -69,6 +70,25 @@ return {
 
     -- LspRestart，将所有 <leader>R 开头的都作为重启某项服务的前缀
     ["<Leader>Rl"] = { "<cmd>LspRestart<cr>", desc = "重启LSP服务" },
+    -- markmap 监听
+    ["<leader>MW"] = {
+      function()
+        if vim.filetype.match({ buf = 0 }) ~= "markdown" then
+          return
+        end
+        local current_file = vim.fn.expand("%")
+        local command = "markmap -w " .. current_file
+        local task = require("overseer.task").new({
+          cmd = command,
+          name = "MarkmapRunner",
+          components = {
+            { "on_complete_notify", statuses = { "success" } },
+          }
+        })
+        task:start()
+      end,
+      desc = "markmap watch"
+    }
   },
   t = {
     -- setting a mapping to false will disable it
