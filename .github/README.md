@@ -179,3 +179,5 @@ nvim
   - `<enter>` ：选择当前节点，撤回到此节点的状态
 
 - `Ctrl+k` ：插入模式下，快速将当前行切换到中间，相当于普通模式下 `zz`  -- *normal*
+
+- `ga` ：插件 [EasyAlign](https://github.com/junegunn/vim-easy-align) 快捷方式，选中可使用例如 `ga=` 对齐 `=` 前后，常用 `vipga=` -- *n, x, v*
